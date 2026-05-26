@@ -1,27 +1,134 @@
-# AngularLocalStorage
+# 🚀 Angular LocalStorage Service
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Aplicación desarrollada en **Angular 16** que implementa un servicio reutilizable para manejar LocalStorage mediante prefijos configurables y pipes personalizadas.
 
-## Development server
+El proyecto encapsula operaciones de almacenamiento para evitar acceso directo a `localStorage`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## ⚙️ Requisitos del sistema
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-## Build
+- 📦 **Node.js:** `v18+` *(preferiblemente v18.10.0)*
+- 📦 **npm:** `v9+`
+- 🅰️ **Angular CLI:** `v16.x`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🔍 Verificar versiones instaladas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecuta:
 
-## Running end-to-end tests
+```bash
+node -v
+npm -v
+ng version
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🚀 Instalación del proyecto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1️⃣ Clonar repositorio
+
+```bash
+git clone <URL_DEL_REPO>
+cd angular-localstorage-service
+```
+
+### 2️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Ejecutar proyecto
+
+```bash
+ng serve
+```
+
+Luego abre:
+
+```bash
+http://localhost:4200
+```
+
+---
+
+## 🧠 Arquitectura del proyecto
+
+El proyecto centraliza acceso a LocalStorage usando un servicio compartido.
+
+### 📦 LocalstorageService
+
+Permite:
+
+- Guardar valores
+- Obtener valores
+- Limpiar storage
+- Configurar prefijos
+- Evitar colisiones entre claves
+
+---
+
+## 📦 LocalstoragePipe
+
+Pipe personalizada para obtener valores almacenados directamente desde templates:
+
+```html
+{{ 'clave1' | localstorage }}
+```
+
+---
+
+## ⚙️ Funcionalidades principales
+
+- 💾 Guardar información en LocalStorage
+- 🔍 Obtener datos mediante pipe
+- 🧹 Limpiar almacenamiento por prefijo
+- ⚙️ Configuración inicial con APP_INITIALIZER
+- 🧩 Servicio reutilizable
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- 🅰️ Angular 16
+- ⚡ TypeScript
+- 🧠 Angular Pipes
+- 💾 Browser LocalStorage API
+- 🔧 APP_INITIALIZER
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+src/app/
+├── localstorage/
+│   └── localstorage.module.ts
+├── localstorage.pipe.ts
+├── localstorage.service.ts
+├── app.module.ts
+├── app.component.ts
+```
+
+---
+
+## 🔥 Buenas prácticas implementadas
+
+- Encapsulación del acceso a LocalStorage
+- Configuración inicial con APP_INITIALIZER
+- Reutilización mediante servicios
+- Separación de responsabilidades
+- Uso de pipes personalizadas
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso educativo y forma parte de un portafolio personal.
