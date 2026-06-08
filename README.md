@@ -1,24 +1,74 @@
-# 🚀 Angular LocalStorage Service
+<h1 align="center">🗄️ Angular LocalStorage Service</h1>
 
-Aplicación desarrollada en **Angular 16** que implementa un servicio reutilizable para manejar LocalStorage mediante prefijos configurables y pipes personalizadas.
+<p align="center">
+  <img src="https://img.shields.io/badge/Angular-16-DD0031?logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/LocalStorage-Service-4285F4?logo=googlechrome&logoColor=white" alt="LocalStorage Service" />
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen" alt="Completed" />
+</p>
 
-El proyecto encapsula operaciones de almacenamiento para evitar acceso directo a `localStorage`.
+<p align="center">
+  <a href="https://github.com/alobuuls/angular-localstorage-service" target="_blank"><img src="https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white" alt="Repository" /></a>
+  <a href="https://github.com/alobuuls/angular-localstorage-service/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/alobuuls/angular-localstorage-service?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/alobuuls/angular-localstorage-service/commits/main" target="_blank"><img src="https://img.shields.io/github/last-commit/alobuuls/angular-localstorage-service" alt="Last Commit" /></a>
+</p>
 
 ---
 
-## ⚙️ Requisitos del sistema
+## 📑 Table of Contents
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
+* [🗄️ Angular LocalStorage Service](#️-angular-localstorage-service)
 
-- 📦 **Node.js:** `v18+` *(preferiblemente v18.10.0)*
-- 📦 **npm:** `v9+`
+  * [🌐 Live Demo](#-live-demo)
+  * [📖 Description](#-description)
+  * [⚙️ System Requirements](#️-system-requirements)
+  * [🚀 Project Installation](#-project-installation)
+  * [▶️ Run the Project](#️-run-the-project)
+  * [🧠 Project Architecture](#-project-architecture)
+  * [✨ Features](#-features)
+  * [🛠 Technologies Used](#-technologies-used)
+  * [📁 Project Structure](#-project-structure)
+  * [🔥 Best Practices Implemented](#-best-practices-implemented)
+  * [🎯 Project Goal](#-project-goal)
+  * [📄 License](#-license)
+
+---
+
+## 🌐 Live Demo
+
+🔗 https://alobuuls.github.io/angular-localstorage-service/
+
+---
+
+## 📖 Description
+
+> [!NOTE]
+> An Angular 16 application that implements a reusable LocalStorage service with configurable key prefixes and custom pipes.
+
+The project demonstrates how to encapsulate browser storage operations behind reusable Angular services and modules, avoiding direct access to the Local Storage API while improving maintainability, scalability, and code organization.
+
+---
+
+## ⚙️ System Requirements
+
+Before running the project, make sure you have installed:
+
+- 📦 **Node.js:** `v16.14.x – v18.x` *(recommended: v18 LTS)*
+- 📦 **npm:** `v8+`
 - 🅰️ **Angular CLI:** `v16.x`
 
+## Recommended using nvm
+
+```bash
+nvm install 18
+nvm use 18
+```
+
 ---
 
-## 🔍 Verificar versiones instaladas
+## 🔍 Verify Installed Versions
 
-Ejecuta:
+Run the following commands in your terminal:
 
 ```bash
 node -v
@@ -28,16 +78,17 @@ ng version
 
 ---
 
-## 🚀 Instalación del proyecto
+## 🚀 Project Installation
 
-### 1️⃣ Clonar repositorio
+### 1️⃣ Clone the repository
 
 ```bash
-git clone <URL_DEL_REPO>
+git clone git@github.com:alobuuls/angular-localstorage-service.git
+
 cd angular-localstorage-service
 ```
 
-### 2️⃣ Instalar dependencias
+### 2️⃣ Install dependencies
 
 ```bash
 npm install
@@ -45,90 +96,163 @@ npm install
 
 ---
 
-## ▶️ Ejecutar proyecto
+## ▶️ Run the Project
+
+Start the development server:
 
 ```bash
 ng serve
 ```
 
-Luego abre:
+Then open:
 
-```bash
+```text
 http://localhost:4200
 ```
 
 ---
 
-## 🧠 Arquitectura del proyecto
+## 🧠 Project Architecture
 
-El proyecto centraliza acceso a LocalStorage usando un servicio compartido.
+The application follows a reusable architecture based on Angular services, modules, and custom pipes.
 
-### 📦 LocalstorageService
+### 🗄️ LocalStorage Service
 
-Permite:
+Responsible for:
 
-- Guardar valores
-- Obtener valores
-- Limpiar storage
-- Configurar prefijos
-- Evitar colisiones entre claves
+* Saving values into Local Storage
+* Retrieving stored values
+* Removing stored values
+* Managing configurable prefixes
+* Preventing key collisions
 
----
+### 🔄 LocalStorage Pipe
 
-## 📦 LocalstoragePipe
+Responsible for:
 
-Pipe personalizada para obtener valores almacenados directamente desde templates:
+* Reading Local Storage values from templates
+* Simplifying UI integration
+* Improving template readability
+
+Example:
 
 ```html
-{{ 'clave1' | localstorage }}
+{{ 'userName' | localstorage }}
+```
+
+### 📦 LocalStorage Module
+
+Responsible for:
+
+* Centralizing storage configuration
+* Registering providers
+* Initializing storage settings
+
+### 🏠 App Component
+
+Responsible for:
+
+* Demonstrating storage operations
+* Consuming the storage service
+* Testing persistence functionality
+
+---
+
+## ✨ Features
+
+* 💾 Store data in Local Storage
+* 🔍 Retrieve values through a custom pipe
+* 🧹 Clear storage by prefix
+* ⚙️ Configurable key prefixes
+* 📦 Reusable LocalStorage Service
+* 🔄 Custom Angular Pipe
+* 🚀 APP_INITIALIZER Configuration
+* ♻️ Encapsulated Browser Storage Access
+
+---
+
+## 🛠 Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Angular 16 | Front-End Framework |
+| TypeScript | Application Logic |
+| Local Storage API | Browser Persistence |
+| Angular Services | Business Logic |
+| Angular Pipes | Template Data Access |
+| Angular Modules | Feature Organization |
+| APP_INITIALIZER | Application Bootstrap Configuration |
+
+---
+
+## 📁 Project Structure
+
+```text
+angular-localstorage-service/
+
+├── src/
+│
+├── app/
+│   ├── localstorage/
+│   │   └── localstorage.module.ts
+│   │
+│   ├── localstorage.service.ts
+│   ├── localstorage.pipe.ts
+│   │
+│   ├── app.component.ts
+│   ├── app.component.html
+│   ├── app.component.css
+│   └── app.module.ts
+│
+├── main.ts
+├── styles.css
+├── index.html
+│
+├── angular.json
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
 ---
 
-## ⚙️ Funcionalidades principales
+## 🔥 Best Practices Implemented
 
-- 💾 Guardar información en LocalStorage
-- 🔍 Obtener datos mediante pipe
-- 🧹 Limpiar almacenamiento por prefijo
-- ⚙️ Configuración inicial con APP_INITIALIZER
-- 🧩 Servicio reutilizable
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-- 🅰️ Angular 16
-- ⚡ TypeScript
-- 🧠 Angular Pipes
-- 💾 Browser LocalStorage API
-- 🔧 APP_INITIALIZER
+* Service-based Architecture
+* Separation of Concerns
+* Encapsulation of Browser APIs
+* Dependency Injection
+* APP_INITIALIZER Configuration
+* Reusable Angular Modules
+* Custom Pipes
+* Strong Typing with TypeScript
+* Centralized Storage Management
+* Clean Project Organization
+* Scalable Front-End Design
 
 ---
 
-## 📁 Estructura del proyecto
+## 🎯 Project Goal
 
-```bash
-src/app/
-├── localstorage/
-│   └── localstorage.module.ts
-├── localstorage.pipe.ts
-├── localstorage.service.ts
-├── app.module.ts
-├── app.component.ts
-```
+Practice and strengthen Angular architecture concepts through the implementation of a reusable LocalStorage abstraction layer.
 
----
+Key concepts covered:
 
-## 🔥 Buenas prácticas implementadas
-
-- Encapsulación del acceso a LocalStorage
-- Configuración inicial con APP_INITIALIZER
-- Reutilización mediante servicios
-- Separación de responsabilidades
-- Uso de pipes personalizadas
+* Angular Services
+* Angular Pipes
+* Angular Modules
+* APP_INITIALIZER
+* Local Storage API
+* Dependency Injection
+* Browser Data Persistence
+* Reusable Architecture Patterns
+* TypeScript Best Practices
+* Front-End Application Design
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto es de uso educativo y forma parte de un portafolio personal.
+This project is intended for educational and portfolio purposes.
+
+Created by **Alondra Francisco**.
