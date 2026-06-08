@@ -16,9 +16,9 @@ jobs:
 
       - run: npm install
 
-      - run: npx ng build --prod --base-href /angular-localstorage-service/
+      - run: npx ng build --configuration production --base-href /angular-localstorage-service/
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/angular-local-storage
+          publish_dir: ./dist/angular-local-storage/browser
